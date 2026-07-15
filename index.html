@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>IslamMed | Kardiologiya Markazi - Yurak Sog'lig'i Uchun Eng Yaxshi Tanlov</title>
+    <style>
+      .map-box{
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.contact-details p{
+    margin:15px 0;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.website-btn{
+    margin-top:30px;
+}
+
+.website-btn a{
+    display:inline-block;
+    padding:16px 30px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#1e6bd6,#0b4ba1);
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(30,107,214,.35);
+}
+
+.website-btn a:hover{
+    transform:translateY(-5px);
+}
+   
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            height: 85px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(30, 107, 214, 0.15);
+        }
+        
+        .logo {
+            font-size: 7px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e6bd6, #0a4a9e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: #e74c3c;
+            font-size: 32px;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #1e6bd6;
+            transform: translateY(-2px);
+        }
+        
+        .search-bar input {
+            width: 280px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            outline: none;
+            transition: 0.3s;
+        }
+        
+        .search-bar input:focus {
+            border-color: #1e6bd6;
+            width: 320px;
+            box-shadow: 0 0 0 3px rgba(30, 107, 214, 0.1);
+        }
+        
+        .right-side img {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 25px auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .carousel-container.images {
+            height: 580px;
+        }
+        
+        .slide {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .carousel-container.images .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-container.images .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.3) 100%);
+            pointer-events: none;
+        }
+        
+        .content {
+            position: absolute;
+            bottom: 80px;
+            left: 60px;
+            z-index: 10;
+            color: white;
+            max-width: 600px;
+        }
+        
+        .content h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content p {
+            font-size: 20px;
+            opacity: 0.95;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 20;
+            color: #1e6bd6;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .nav-btn:hover {
+            background: #1e6bd6;
+            color: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .prev {
+            left: 20px;
+        }
+        
+        .next {
+            right: 20px;
+        }
+        
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(30, 107, 214, 0.1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1e6bd6;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #4a627a;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .heart-pulse {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: #fee2e2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            animation: softBeat 1.2s infinite;
+        }
+        
+        @keyframes softBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin: 70px 0 40px;
+            background: linear-gradient(135deg, #1e6bd6, #0a4a9e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f8;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border-color: #1e6bd6;
+        }
+        
+        .service-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #1e2f3e;
+        }
+        
+        .service-card p {
+            color: #5a6e7c;
+            line-height: 1.6;
+        }
+        
+        
+        .doctors-single {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto 70px;
+            padding: 0 5%;
+        }
+        
+        .doctor-card-single {
+            background: white;
+            border-radius: 48px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+            max-width: 550px;
+            width: 100%;
+            border: 1px solid rgba(30, 107, 214, 0.2);
+        }
+        
+        .doctor-card-single:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 55px rgba(30, 107, 214, 0.2);
+        }
+        
+        .doctor-img-single {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            object-position: top center;
+            background: #eef2f8;
+        }
+        
+        .doctor-card-single h3 {
+            font-size: 28px;
+            margin: 25px 0 8px;
+            color: #1a2c3e;
+        }
+        
+        .doctor-specialty {
+            color: #1e6bd6;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .doctor-exp {
+            color: #6c7a89;
+            font-size: 16px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #eef2f8;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 80%;
+        }
+        
+        .doctor-bio {
+            padding: 0 25px 30px;
+            color: #4a627a;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        
+        .table-container {
+            max-width: 1300px;
+            margin: 50px auto;
+            padding: 0 5%;
+            background: white;
+            border-radius: 32px;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        
+        th,
+        td {
+            padding: 18px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #f8fafd;
+            color: #1e6bd6;
+            font-weight: 700;
+        }
+        
+        tr:hover {
+            background: #f8fcff;
+        }
+        
+        .contact-section {
+            padding: 70px 5%;
+            background: white;
+        }
+        
+        .contact-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #1e6bd6;
+        }
+        
+        .contact-details {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-image {
+            width: 100%;
+            border-radius: 28px;
+            margin-top: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            background: #f8fafd;
+            padding: 40px;
+            border-radius: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #1e6bd6;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #1e6bd6, #0a4a9e);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 107, 214, 0.3);
+        }
+        /* FAQ Section */
+        
+        .faq-grid {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 18px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            padding: 22px 25px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            transition: 0.2s;
+        }
+        
+        .faq-question:hover {
+            background: #f0f6fe;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+            color: #4a627a;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 22px 25px;
+            max-height: 200px;
+        }
+        
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            max-width: 1300px;
+            margin: 40px auto 60px;
+            padding: 0 5%;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-date {
+            color: #1e6bd6;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        
+        .video-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            padding: 0 5%;
+        }
+        
+        .video-card video {
+            width: 320px;
+            border-radius: 28px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+        
+        .video-card video:hover {
+            transform: scale(1.02);
+        }
+        
+        .reklama-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 800;
+            margin: 60px 0 30px;
+            color: #1e6bd6;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #0f2b3a, #07161f);
+            color: white;
+            padding: 50px 5% 30px;
+            margin-top: 70px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-col p,
+        .footer-col a {
+            color: #b0c4de;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #2c4a5e;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+                padding: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .content h1 {
+                font-size: 32px;
+            }
+            .carousel-container.images {
+                height: 450px;
+            }
+            .doctor-img-single {
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 550px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .doctor-card-single h3 {
+                font-size: 24px;
+            }
+        }
+
+        .menu-btn{
+    display:none;
+    background:#1e6bd6;
+    color:#fff;
+    border:none;
+    font-size:30px;
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.navbar{
+    flex-wrap:wrap;
+    height:auto;
+    padding:15px;
+}
+
+
+
+.menu-btn{
+    display:block;
+}
+
+.nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    gap:15px;
+    margin-top:15px;
+    text-align:center;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.search-bar{
+    width:100%;
+    margin-top:15px;
+}
+
+.search-bar input{
+    width:100%;
+}
+
+.search-bar input:focus{
+    width:100%;
+}
+
+}
+@media (max-width:768px){
+
+.carousel-container.images{
+    height:260px;
+    margin:15px;
+    border-radius:18px;
+}
+
+.content{
+    left:20px;
+    right:20px;
+    bottom:25px;
+    max-width:100%;
+}
+
+.content h1{
+    font-size:24px;
+    line-height:1.2;
+    margin-bottom:10px;
+}
+
+.content p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+.nav-btn{
+    width:40px;
+    height:40px;
+    font-size:22px;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+.carousel-container.images .slide img{
+    object-position:center;
+}
+
+}
+@media (max-width:768px){
+
+.stats-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin:35px auto;
+}
+
+.stat-card{
+    padding:25px 15px;
+}
+
+.stat-number{
+    font-size:34px;
+}
+
+.stat-label{
+    font-size:16px;
+}
+
+.heart-pulse{
+    width:65px;
+    height:65px;
+    font-size:30px;
+}
+
+}
+@media (max-width:768px){
+
+.services-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.service-card{
+    padding:25px 18px;
+}
+
+.service-icon{
+    font-size:45px;
+}
+
+.service-card h3{
+    font-size:22px;
+}
+
+.service-card p{
+    font-size:15px;
+}
+
+}
+@media (max-width:768px){
+
+.doctors-single{
+    padding:0 15px;
+}
+
+.doctor-card-single{
+    border-radius:25px;
+}
+
+.doctor-img-single{
+    height:240px;
+}
+
+.doctor-card-single h3{
+    font-size:22px;
+}
+
+.doctor-specialty{
+    font-size:16px;
+}
+
+.doctor-exp{
+    font-size:14px;
+    width:90%;
+}
+
+.doctor-bio{
+    font-size:15px;
+    padding:0 18px 20px;
+}
+
+}
+@media (max-width:768px){
+
+.table-container{
+    padding:0;
+    border-radius:18px;
+    overflow-x:auto;
+}
+
+table{
+    min-width:650px;
+}
+
+th,
+td{
+    padding:12px;
+    font-size:14px;
+}
+
+}
+@media (max-width:768px){
+
+.video-showcase{
+    gap:20px;
+}
+
+.video-card{
+    width:100%;
+}
+
+.video-card video{
+    width:100%;
+}
+
+}
+
+@media (max-width:768px){
+
+.blog-grid{
+    grid-template-columns:1fr;
+}
+
+.blog-card{
+    border-radius:20px;
+}
+
+.blog-img{
+    height:200px;
+}
+
+.blog-title{
+    font-size:20px;
+}
+
+}
+@media (max-width:768px){
+
+.faq-question{
+    font-size:16px;
+    padding:18px;
+}
+
+.faq-answer{
+    font-size:14px;
+}
+
+}
+
+@media (max-width:768px){
+
+.contact-section{
+    padding:40px 15px;
+}
+
+.contact-container{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.map-box iframe{
+    height:300px;
+}
+
+.contact-info{
+    text-align:center;
+}
+
+.contact-info h2{
+    font-size:28px;
+}
+
+.contact-details p{
+    font-size:16px;
+    margin:10px 0;
+}
+
+.website-btn a{
+    width:100%;
+    padding:15px;
+    box-sizing:border-box;
+}
+
+}
+@media (max-width:768px){
+
+footer{
+    padding:40px 20px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+    text-align:center;
+}
+
+.footer-col h4{
+    font-size:22px;
+}
+
+.footer-col p,
+.footer-col a{
+    font-size:15px;
+}
+
+.copyright{
+    font-size:14px;
+}
+
+}
+*{
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+video{
+    max-width:100%;
+}
+
+iframe{
+    max-width:100%;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.section-title{
+    padding:0 15px;
+}
+
+.service-card,
+.blog-card,
+.stat-card,
+.doctor-card-single{
+    width:100%;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo"><h1>IslamMed</h1></div>
+        <button class="menu-btn">☰</button>
+        <div class="nav-links">
+            <a href="#">Bosh sahifa</a>
+            <a href="#">Xizmatlar</a>
+            <a href="#">Shifokorlar</a>
+            <a href="#">Narxlar</a>
+            <a href="#">Blog</a>
+            <a href="#">Kontakt</a>
+        </div>
+        <div class="search-bar"><input type="text" placeholder="🔍 Qidiruv..."></div>
+    </header>
+
+    <main>
+
+        <div class="carousel-container images">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400" alt="Kardiologiya markazi">
+                <div class="content">
+                    <h1>IslamMed Shifoxonasi</h1>
+                    <p>15+ yillik tajriba, 1000+ muvaffaqiyatli kasalliklardan qarshi</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1400" alt="Zamonaviy diagnostika">
+                <div class="content">
+                    <h1>Zamonaviy diagnostika</h1>
+                    <p>MRI, EKG, ECHOKG - 24/7 monitoring</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400" alt="Shaxsiy yondashuv">
+                <div class="content">
+                    <h1>Shaxsiy yondashuv</h1>
+                    <p>Har bir bemor uchun individual davolash rejasi</p>
+                </div>
+            </div>
+            <button class="nav-btn prev" aria-label="Oldingi">‹</button>
+            <button class="nav-btn next" aria-label="Keyingi">›</button>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="heart-pulse">❤️</div>
+                <div class="stat-number">1,000+</div>
+                <div class="stat-label">Mamnun bemorlar</div>
+            </div>
+            <div class="stat-card">
+                <div class="heart-pulse">👨‍⚕️</div>
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Mutaxassis shifokor</div>
+            </div>
+            <div class="stat-card">
+                <div class="heart-pulse">🏥</div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Muvaffaqiyat darajasi</div>
+            </div>
+            <div class="stat-card">
+                <div class="heart-pulse">⚡️</div>
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Yaxshi Davolashlar</div>
+            </div>
+        </div>
+
+        
+        <h2 class="section-title">🏆 Bizning xizmatlar</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🫀</div>
+                <h3>Kardiologik tekshiruv</h3>
+                <p>EKG, ECHOKG, Holter monitoring. To'liq yurak tahlili.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💉</div>
+                <h3>Koronar angiografiya</h3>
+                <p>Yuqori aniqlikdagi tomirlarni tekshirish, blokirovkalarni aniqlash.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>Reabilitatsiya</h3>
+                <p>Infarktdan keyingi reabilitatsiya, fizioterapiya va parhez nazorati.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Lipid profil</h3>
+                <p>Xolesterin, triglitseridlar va yurak xavf omillarini tahlil qilish.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡️</div>
+                <h3>Aritmologiya</h3>
+                <p>Yura ritmi buzilishlarini davolash, ablatsiya terapiyasi.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧬</div>
+                <h3>Genetik skrining</h3>
+                <p>Irsiy kardiomiopatiyalarni erta aniqlash.</p>
+            </div>
+        </div>
+
+
+        <h2 class="section-title">👨‍⚕️ Tajribali shifokorlar jamoasi</h2>
+        <div class="doctors-single">
+            <div class="doctor-card-single">
+                <img class="doctor-img-single" src="Dadam.jpg" alt="Dr. Abdurahimov Muhammad Ibrohim" onerror="this.src='https://via.placeholder.com/550x360?text=Dr.+Ibrohim'">
+                <h3>Abdurahimov Muhammad Ibrohim</h3>
+                <div class="doctor-specialty">Interventsional kardiolog | Klinika direktori</div>
+                <div class="doctor-exp">⭐️ 15 yil tajriba | 1000+ muvaffaqiyatli jarrohlik amaliyot</div>
+                <div class="doctor-bio">
+                    💙 Yurak aritmiyasi, koronar arteriya kasalliklari va invaziv kardiologiya bo‘yicha yetakchi mutaxassis. Yevropa kardiologlar jamiyati aʼzosi. Har bir bemorga individual yondashuv va eng zamonaviy davolash protokollarini qo‘llaydi.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">💰 Diagnostika narxlari</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Xizmat turi</th>
+                        <th>Tavsif</th>
+                        <th>Narx (so'm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EKG (elektrokardiogramma)</td>
+                        <td>Tezkor yurak ritmini tahlil qilish</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>ECHOKG (yurak ultratovushi)</td>
+                        <td>Yurak klapanlari, kameralari va qon oqimi</td>
+                        <td>180,000</td>
+                    </tr>
+                    <tr>
+                        <td>Holter monitoring (24 soat)</td>
+                        <td>Kunlik EKG kuzatuvi</td>
+                        <td>250,000</td>
+                    </tr>
+                    <tr>
+                        <td>Kardiolog konsultatsiyasi</td>
+                        <td>Bizning yetakchi shifokorlarimiz bilan</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Koronar angiografiya</td>
+                        <td>Kontrastli tomirlarni tekshirish</td>
+                        <td>1,200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Umumiy kardiologik tekshiruv</td>
+                        <td>Konsultatsiya + EKG + ECHOKG</td>
+                        <td>300,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <h2 class="reklama-title">📺 Tavsiya etilgan videolar</h2>
+        <div class="video-showcase">
+            <div class="video-card">
+                <video src="Fakt3.MP4" controls width="320" poster="https://via.placeholder.com/320x180?text=Klinikaga+umumiy+ko'rinish"></video>
+                <p style="text-align:center; margin-top:8px;">Klinikaga umumiy ko'rinish</p>
+            </div>
+            <div class="video-card">
+                <video src="Fakt1.MP4" controls width="320" poster="https://via.placeholder.com/320x180?text=Yurak+sog'lig'i+faktlari"></video>
+                <p style="text-align:center; margin-top:8px;">Yurak sog'lig'i bo'yicha faktlar</p>
+            </div>
+            <div class="video-card">
+                <video src="Fakt2.MP4" controls width="320" poster="https://via.placeholder.com/320x180?text=Zamonaviy+uskunalar"></video>
+                <p style="text-align:center; margin-top:8px;">Zamonaviy uskunalar</p>
+            </div>
+        </div>
+
+
+        <h2 class="section-title">📰 Tibbiyot yangiliklari & blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=500" alt="">
+                <div class="blog-content">
+                    <div class="blog-date">25 Mart, 2025</div>
+                    <div class="blog-title">Gipertoniya: erta belgilar va oldini olish</div>
+                    <p>Qon bosimini nazorat qilishning 5 usuli...</p>
+                </div>
+            </div>
+            <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500" alt="">
+                <div class="blog-content">
+                    <div class="blog-date">10 Fevral, 2025</div>
+                    <div class="blog-title">Yurak uchun foydali ovqatlar</div>
+                    <p>Omega-3, antioksidantlar va to'g'ri ovqatlanish bo'yicha maslahatlar...</p>
+                </div>
+            </div>
+            <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=500" alt="">
+                <div class="blog-content">
+                    <div class="blog-date">5 Yanvar, 2025</div>
+                    <div class="blog-title">Stress va yurak kasalliklari</div>
+                    <p>Stressni boshqarishning samarali usullari...</p>
+                </div>
+            </div>
+        </div>
+
+    
+        <h2 class="section-title">❓ Ko'p beriladigan savollar</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">Kardiologga qachon murojaat qilish kerak?<span>+</span></div>
+                <div class="faq-answer">Agar ko'krak qafasida og'riq, nafas qisishi, yurak urishi tezlashishi, bosh aylanishi kuzatilsa darhol murojaat qiling. Har yili profilaktik tekshiruvdan o'tish tavsiya etiladi.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">ECHOKG nima va u qanday o'tkaziladi?<span>+</span></div>
+                <div class="faq-answer">Yurak ultratovush tekshiruvi bo'lib, og'riqsiz va 15-20 daqiqa davom etadi. Yurak klapanlari, mushaklari va qon oqimi baholanadi.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Sug'urta polisi orqali qabul qilasizmi?<span>+</span></div>
+                <div class="faq-answer">Ha, barcha davlat va xususiy sug'urta kompaniyalari bilan hamkorlik qilamiz. Batafsil ma'lumot uchun resepsiyonga murojaat qiling.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Operatsiyadan keyingi reabilitatsiya qancha davom etadi?<span>+</span></div>
+                <div class="faq-answer">O'rtacha 2-6 hafta, bemorning holatiga qarab. Shifokorlarimiz to'liq reabilitatsiya dasturini tuzadi.</div>
+            </div>
+        </div>
+
+
+  <section class="contact-section">
+
+    <div class="contact-container">
+
+
+        <div class="map-box">
+
+            <iframe
+    src="https://www.google.com/maps?q=IslamMed+cardiology+Yangiqo'rg'on+Namangan&output=embed"
+    width="100%"
+    height="500"
+    style="border:0;border-radius:25px;"
+    loading="lazy"
+    allowfullscreen>
+</iframe>
+
+        </div>
+
+        
+        <div class="contact-info">
+
+            <h2>📞 Bog'lanish</h2>
+
+            <p>
+                Savollaringiz bo'lsa biz bilan bog'laning.
+            </p>
+
+            <div class="contact-details">
+
+                <p>📍 Namangan viloyati, Yangiqo'rg'on tumani</p>
+
+                <p>📞 +998 94 942 00 03</p>
+
+                <p>📞 +998 94 008 77 00</p>
+
+                <p>📧 islomjonyslv@islammed.uz</p>
+
+                <p>🕒 24/7 Ishlaymiz</p>
+
+            </div>
+
+            <div class="website-btn">
+
+                <a href="#" target="_blank">
+
+                    🌐 Bizning rasmiy saytimiz
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>IslamMed</h4>
+                <p>Yurak sog'lig'i — hayot sifati kafolati. Eng ilg'or texnologiyalar va insoniy munosabat.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Manzil</h4>
+                <p>Namangan sh., Yangiqo'rg'on tumani, chortoq ko'chasi 47</p>
+                <p>📞 +998 94 008 77 00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Ish vaqti</h4>
+                <p>Dushanba - yakShanba: 0:00 – 0:00</p>
+                <p>0:00-0:00</p>
+
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 IslamMed Kardiologiya markazi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+        (function() {
+           
+            const carouselContainer = document.querySelector('.carousel-container.images');
+            if (!carouselContainer) return;
+
+            const slides = Array.from(carouselContainer.querySelectorAll('.slide'));
+            let currentSlide = 0;
+            let autoInterval;
+
+            function showSlide(index) {
+          
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                currentSlide = index;
+
+                slides.forEach((slide, i) => {
+                    if (i === currentSlide) {
+                        slide.classList.add('active');
+     
+                        slide.style.position = 'relative';
+                        slide.style.zIndex = '2';
+                    } else {
+                        slide.classList.remove('active');
+                        slide.style.position = 'absolute';
+                        slide.style.zIndex = '1';
+                    }
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+                resetAutoInterval();
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+                resetAutoInterval();
+            }
+
+            function resetAutoInterval() {
+                if (autoInterval) clearInterval(autoInterval);
+                autoInterval = setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }
+
+    
+            const prevBtn = carouselContainer.querySelector('.prev');
+            const nextBtn = carouselContainer.querySelector('.next');
+
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+ 
+            slides.forEach(slide => {
+                slide.style.position = 'absolute';
+                slide.style.top = '0';
+                slide.style.left = '0';
+                slide.style.width = '100%';
+                slide.style.height = '100%';
+            });
+            
+            showSlide(0);
+            
+            autoInterval = setInterval(nextSlide, 5000);
+        })();
+
+      
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const questionDiv = item.querySelector('.faq-question');
+            if (!questionDiv) return;
+            const span = questionDiv.querySelector('span');
+            questionDiv.addEventListener('click', () => {
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    if (span) span.textContent = '−';
+                } else {
+                    if (span) span.textContent = '+';
+                }
+            });
+        });
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+    </script>
+    
+</body>
+
+</html>
